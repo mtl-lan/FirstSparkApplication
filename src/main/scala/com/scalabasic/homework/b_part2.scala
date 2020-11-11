@@ -32,13 +32,10 @@ object b_part2 extends App{
   //2. Merge uppercase and lowercase words
   val mergedCounts = letterWords.rdd.countByValue().toList
   //3. Sort (descending) the pairs
-  val sortedWordCounts = mergedCounts.sortWith(_._2 >_._2)
+  val sortedWordCounts = mergedCounts.sortWith(_._2 >_._2).take(20)
 
   // print out the results
   sortedWordCounts.foreach(println)
-
-
-
 
 }
 
